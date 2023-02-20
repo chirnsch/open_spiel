@@ -167,6 +167,8 @@ set(GAME_SOURCES
   tarok/contracts.h
   tic_tac_toe.cc
   tic_tac_toe.h
+  secret_tic_tac_toe.cc
+  secret_tic_tac_toe.h
   tiny_bridge.cc
   tiny_bridge.h
   tiny_hanabi.cc

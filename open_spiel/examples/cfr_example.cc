@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+#include <fstream>
 #include <string>
 
 #include "open_spiel/abseil-cpp/absl/flags/flag.h"
@@ -31,8 +32,8 @@ int main(int argc, char** argv) {
   std::shared_ptr<const open_spiel::Game> game =
       open_spiel::LoadGame(absl::GetFlag(FLAGS_game_name));
   open_spiel::algorithms::CFRSolver solver(*game);
-  std::cerr << "Starting CFR on " << game->GetType().short_name
-            << "..." << std::endl;
+  std::cerr << "Starting CFR on " << game->GetType().short_name << "..."
+            << std::endl;
 
   for (int i = 0; i < absl::GetFlag(FLAGS_num_iters); ++i) {
     solver.EvaluateAndUpdatePolicy();
@@ -44,4 +45,8 @@ int main(int argc, char** argv) {
                 << std::endl;
     }
   }
+  std::string serialized = solver.Serialize();
+  std::ofstream file("output.txt");
+  file << serialized;
+  file.close();
 }
