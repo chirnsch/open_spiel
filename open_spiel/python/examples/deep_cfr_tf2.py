@@ -58,6 +58,10 @@ def main(unused_argv):
   logging.info("Strategy Buffer Size: '%s'",
                len(deep_cfr_solver.strategy_buffer))
   logging.info("Final policy loss: '%s'", policy_loss)
+  
+
+  deep_cfr_solver.save_policy_network("deep_cfr.txt")
+  return
 
   average_policy = policy.tabular_policy_from_callable(
       game, deep_cfr_solver.action_probabilities)
