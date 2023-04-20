@@ -374,7 +374,7 @@ std::vector<Action> SchnapsenState::LegalActions() const {
   // Farbzwang, Stichzwang
   else {
     int open_suit = GetSuit(open_card_);
-    int open_value = GetValue(open_value);
+    int open_value = GetValue(open_card_);
     std::vector<Action> cards = Actions(hands_[player_action_type.player]);
     std::vector<Action> actions;
 
