@@ -23,7 +23,7 @@ namespace testing = open_spiel::testing;
 
 void BasicSchnapsenTest() {
   testing::LoadGameTest("schnapsen");
-  testing::NoChanceOutcomesTest(*LoadGame("schnapsen"));
+  testing::ChanceOutcomesTest(*LoadGame("schnapsen"));
   testing::RandomSimTest(*LoadGame("schnapsen"), 200);
 }
 
