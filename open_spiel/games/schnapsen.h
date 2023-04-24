@@ -101,7 +101,7 @@ class SchnapsenGame : public Game {
   // TODO: Update for Zwanziger and Vierziger
   int NumDistinctActions() const override { return kCards; }
   double MinUtility() const override { return -3; }
-  double UtilitySum() const override { return 0; }
+  absl::optional<double> UtilitySum() const override { return 0; }
   double MaxUtility() const override { return 3; }
   int MaxGameLength() const override { return kCards; }
   int MaxChanceOutcomes() const override { return kCards; }
