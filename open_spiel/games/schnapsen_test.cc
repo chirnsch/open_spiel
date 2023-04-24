@@ -21,7 +21,7 @@ namespace {
 
 namespace testing = open_spiel::testing;
 
-void BasicTicTacToeTests() {
+void BasicSchnapsenTest() {
   testing::LoadGameTest("schnapsen");
   testing::NoChanceOutcomesTest(*LoadGame("schnapsen"));
   testing::RandomSimTest(*LoadGame("schnapsen"), 200);
@@ -32,5 +32,5 @@ void BasicTicTacToeTests() {
 }  // namespace open_spiel
 
 int main(int argc, char** argv) {
-  open_spiel::schnapsen::BasicTicTacToeTests();
+  open_spiel::schnapsen::BasicSchnapsenTest();
 }
